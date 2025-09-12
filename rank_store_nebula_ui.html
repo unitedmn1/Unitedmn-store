@@ -1,17 +1,119 @@
-<html lang="en"><head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Nootralized handsome</title>
-  <meta name="description" content="nootralized is the best ATK clan owner for me -777zent">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AXO Calculator</title>
   <style>
-    :root{
-      --bg1:#061226; /* deep navy */
-      --bg2:#08203a; /* darker gradient */
-      --accent1:#7dd3fc; /* light blue */
-      --accent2:#60a5fa; /* blue */
-      --glass: rgba(255,255,255,0.06);
-      --glass-2: rgba(255,255,255,0.03);
-      --text:#e6f0ff;
-      --muted:#9fb8d6;
+    body {
+      background: #0f0f0f;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+      margin: 0;
     }
-    *{box-sizing:border-box}
+
+    .calculator {
+      background: #1a1a1a;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #00ffff80;
+      width: 300px;
+    }
+
+    .display {
+      background: #000;
+      color: #00ffff;
+      font-size: 24px;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: right;
+      margin-bottom: 15px;
+      overflow: hidden;
+      height: 50px;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .btn {
+      background: #333;
+      color: #fff;
+      font-size: 18px;
+      padding: 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: #00ffff;
+      color: #000;
+    }
+
+    .equal {
+      grid-column: span 2;
+      background-color: #00ffff;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .clear {
+      background-color: #ff0055;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <div class="display" id="display">0</div>
+    <div class="buttons">
+      <button class="btn">7</button>
+      <button class="btn">8</button>
+      <button class="btn">9</button>
+      <button class="btn">/</button>
+      <button class="btn">4</button>
+      <button class="btn">5</button>
+      <button class="btn">6</button>
+      <button class="btn">*</button>
+      <button class="btn">1</button>
+      <button class="btn">2</button>
+      <button class="btn">3</button>
+      <button class="btn">-</button>
+      <button class="btn">0</button>
+      <button class="btn">.</button>
+      <button class="btn">+</button>
+      <button class="btn equal">=</button>
+      <button class="btn clear">C</button>
+    </div>
+  </div>
+
+  <script>
+    const display = document.getElementById('display');
+    const buttons = document.querySelectorAll('.btn');
+    let input = "";
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const value = button.textContent;
+
+        if (value === '=') {
+          display.textContent = '777ZENT/AXO ON TOP!';
+          input = "";
+        } else if (value === 'C') {
+          input = "";
+          display.textContent = "0";
+        } else {
+          input += value;
+          display.textContent = input;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
